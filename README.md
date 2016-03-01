@@ -41,9 +41,10 @@ input box.
 
 switch to this branch...
 ```bash
-$ git checkout -b l3-listen-response
+$ git checkout -b l4-build-response
 ```
 
+<<<<<<< HEAD
 1. create route for handling ajax requests and returning json
 
   First we are going to create a route to handle all search keywords and return a
@@ -138,3 +139,6 @@ $ git checkout -b l3-listen-response
 
 See the completed file here: [app/routes/root.js](https://github.com/coder-forge/ajax-autocomplete/blob/l3-listen-response/app/routes/root.js)
 >>>>>>> d39834aa4636846761599c292aa0de96d574a93e
+=======
+See the completed file here: [app/routes/root.js](https://github.com/coder-forge/ajax-autocomplete/blob/l3-listen-response/app/public/javascripts/global.js)
+>>>>>>> fa7dcd31af29a255a9a0720ebf3cfc7576232ab1

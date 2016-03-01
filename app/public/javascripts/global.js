@@ -17,9 +17,28 @@ $(document).ready(function documentIsReadyCallback(){
         query: val                                                              // add value as a query param to the server
       },
       function responseCallback(json, status, xhr){
-        console.log(status, json)                                               // handle our response
+
+        var $list = $('<ul/>')                                                  // we use jQuery to create an empty UL element
+            .attr('class', 'cf-auto-complete')                                  // set its attributes (in this case the class)
+            .css('position', 'absolute')                                        // the UL's css values dynamically
+            .css('background', '#fff')                                          // ...
+            .css('border', '1px solid #C0C0C0')
+            .css('height', 250)
+            .css('overflow', 'scroll')
+            .css('width', '100%')
+
+        // use jQuery to loop through all elements in the json object
+        $.each(json, function(i, county){                                       // each element will be passed in the 2nd paramater
+
+          var $el = $('<li/>')                                                  // create empty LI element
+            .text(county.text);                                                 // set its text to the county name
+
+          $list.append($el);                                                    // append LI element to UL element
+        });
+
+        $('#containerSearch').append($list);                                    // append UL element to the search parent div element
       }
-    )
+    );
   });
 
   // samples of other events we can listen to
