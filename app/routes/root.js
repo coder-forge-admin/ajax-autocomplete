@@ -14,12 +14,12 @@ router.get('/', function getIndexCallback(req, res, next) {
 router.get('/getResults', function resultsRouteCallback(req, res, next){
 
   // vars
-  var query = sanitize(req.body.query)                                          // sanitize user provided input (remove possibility of user inputed code)
+  var query = sanitize(req.query.query)     // sanitize user provided input (prevents sqlinjection)(remove possibility of user inputed code)
     ,fileLocation   = __dirname + '/../public/sample.json'                      // the location of the json file
 
   // mock database request with file system request
   fs.readFile(fileLocation, function readFileCallback(err, file){               // read the file.
-    if(err) return next(err)                                                    // if error pass back to expressJS.
+    if(err) return next(err) //error handling                                   // if error pass back to expressJS.
 
     var jsonObj = JSON.parse(file)                                              // parse file contents as JSON object.
 

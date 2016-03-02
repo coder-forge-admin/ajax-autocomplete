@@ -36,8 +36,20 @@ $(document).ready(function documentIsReadyCallback(){
           $list.append($el);                                                    // append LI element to UL element
         });
 
-        $('#containerSearch').append($list);                                    // append UL element to the search parent div element
-      }
+        $('#containerSearch').append($list);    // append UL element to the search parent div element
+
+        $(',cf-auto-complete').on('mouseleave', function(el) {
+          var $el = $(this);
+
+          timer = setTimeout(function(){
+            $el.remove()
+          }, 1750);
+        });
+
+        $('.cf-auto-complete').on('mouseenter', function(){
+          clearTimeout(timer);
+        });
+      });
     );
   });
 

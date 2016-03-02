@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": false,
   "scripts": {
-    "start": "nodemon ./app/app.js",
+    "start": "node ./app/app.js",
     "postinstall": "bower install"
   },
   "dependencies": {
