@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+  .container
+
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="/") Coder Forge - Aajax Autocomplete
+
+        div#navbar
+          ul.nav.navbar-nav.navbar-right
+            li#containerSearch
+              input(type="text", name="search", id="searchBox", placeholder="Search for county...")
