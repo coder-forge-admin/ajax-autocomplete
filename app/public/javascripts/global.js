@@ -48,9 +48,10 @@ $(document).ready(function documentIsReadyCallback(){
 
         $('.cf-auto-complete').on('mouseenter', function(){
           clearTimeout(timer);
+
+          
         });
       });
-    );
   });
 
   // samples of other events we can listen to
